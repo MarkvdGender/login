@@ -15,7 +15,7 @@ public class UserRestController {
         service = UserService.getInstance();
     }
 
-    @PostMapping("")
+    @PostMapping("register")
     public void save(@RequestBody User u){
         service.register(u);
     }
