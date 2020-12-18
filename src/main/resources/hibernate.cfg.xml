@@ -4,11 +4,11 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/demo</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">mysql</property>
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.url">jdbc:postgresql://ec2-176-34-114-78.eu-west-1.compute.amazonaws.com/drdi8qfpeu7ja</property>
+        <property name="connection.username">toklhlwtorwoea</property>
+        <property name="connection.password">486d57877d9c6ddcdab1aa1c09c11307b2c1dd95e021bc201d3a3dd4388ab075</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
         <mapping class="com.example.demo.domain.User" />
     </session-factory>
 </hibernate-configuration>
