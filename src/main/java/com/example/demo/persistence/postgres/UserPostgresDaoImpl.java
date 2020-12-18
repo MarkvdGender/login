@@ -1,8 +1,8 @@
-package com.example.demo.persistence.mysql;
+package com.example.demo.persistence.postgres;
 
 import com.example.demo.domain.User;
 import com.example.demo.persistence.UserDao;
-import com.example.demo.persistence.mysql.connection.MysqlHibernateConnection;
+import com.example.demo.persistence.connection.HibernateConnection;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,20 +10,20 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class UserMysqlDaoImpl implements UserDao{
+public class UserPostgresDaoImpl implements UserDao{
 
     private static UserDao instance;
     private static SessionFactory sessionFactory;
     private Session session;
 
-    private UserMysqlDaoImpl(){
-        sessionFactory = MysqlHibernateConnection.getSessionFactory();
+    private UserPostgresDaoImpl(){
+        sessionFactory = HibernateConnection.getSessionFactory();
 
     }
 
     public static UserDao getInstance(){
         if(instance==null){
-            instance = new UserMysqlDaoImpl();
+            instance = new UserPostgresDaoImpl();
         }
         return instance;
     }

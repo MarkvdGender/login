@@ -1,19 +1,19 @@
-package com.example.demo.persistence.mysql.connection;
+package com.example.demo.persistence.connection;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class MysqlHibernateConnection {
+public class HibernateConnection {
 
-    private static MysqlHibernateConnection instance;
+    private static HibernateConnection instance;
     private static SessionFactory sessionFactory;
 
-    private MysqlHibernateConnection(){
+    private HibernateConnection(){
     }
 
     public static SessionFactory getSessionFactory() {
         if(instance==null){
-            instance = new MysqlHibernateConnection();
+            instance = new HibernateConnection();
         }
         if(sessionFactory == null){
             sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();

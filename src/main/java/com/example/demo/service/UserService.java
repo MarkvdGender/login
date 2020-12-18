@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.domain.User;
 import com.example.demo.persistence.UserDao;
-import com.example.demo.persistence.mysql.UserMysqlDaoImpl;
+import com.example.demo.persistence.postgres.UserPostgresDaoImpl;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,7 +17,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.stereotype.Service;
 
 public class UserService {
 
@@ -27,7 +26,7 @@ public class UserService {
     private static final byte[] secret = Base64.getDecoder().decode("bGtcnvDdBDzgVNV3zL9CJK+IiDcV8IwbIVmFXEgnUlw=");
 
     private UserService() {
-        dao = UserMysqlDaoImpl.getInstance();
+        dao = UserPostgresDaoImpl.getInstance();
 
     }
 
